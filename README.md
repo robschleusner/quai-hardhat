@@ -1,26 +1,19 @@
-![](https://user-images.githubusercontent.com/176499/96893278-ebc67580-1460-11eb-9530-d5df3a3d65d0.png) [![NPM Package](https://img.shields.io/npm/v/hardhat.svg?style=flat-square)](https://www.npmjs.org/package/hardhat) [![GitPOAP Badge](https://public-api.gitpoap.io/v1/repo/NomicFoundation/hardhat/badge)](https://www.gitpoap.io/gh/NomicFoundation/hardhat)
-
----
+# Quai Hardhat
 
 Hardhat is an Ethereum development environment for professionals. It facilitates performing frequent tasks, such as running tests, automatically checking code for mistakes or interacting with a smart contract. Check out the [plugin list](https://hardhat.org/plugins/) to use it with your existing tools.
 
-Built by the [Nomic Foundation](https://nomic.foundation/) for the Ethereum community.
+This is a Quai fork that reroutes the Solidity download to our link. Other than that you can use Hardhat just like you always have.
 
-Join our [Hardhat Support Discord server](https://hardhat.org/discord) to stay up to date on new releases, plugins and tutorials.
+## Usage
 
-## Installation
-
-To install Hardhat, go to an empty folder, initialize an `npm` project (i.e. `npm init`), and run
+1. To use, open an existing NPM project's `package.json` file. In the `@devDependencies` section, add the following line:
 
 ```
-npm install --save-dev hardhat
+"hardhat": "git@github.com:dominant-strategies/quai-hardhat.git",
 ```
+2. Next, run `npm i` to install dependencies
 
-Once it's installed, just run this command and follow its instructions:
-
-```
-npx hardhat
-```
+3. Finally, to remove your existing Solidity compiler so you can replace it with SolidityX, you need to run `npx hardhat clean --global`. Now run `npx hardhat compile` and SolidityX will be downloaded.
 
 ## Documentation
 
@@ -44,4 +37,6 @@ Go to [CONTRIBUTING.md](./CONTRIBUTING.md) to learn about how to set up Hardhat'
 
 ## Happy building!
 
-👷‍♀️👷‍♂️👷‍♀️👷‍♂️👷‍♀️👷‍♂️👷‍♀️👷‍♂️👷‍♀️👷‍♂️👷‍♀️👷‍♂️👷‍♀️👷‍♂️
+Built by the [Nomic Foundation](https://nomic.foundation/) for the Ethereum community.
+
+Join our [Hardhat Support Discord server](https://hardhat.org/discord) to stay up to date on new releases, plugins and tutorials.
