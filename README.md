@@ -13,7 +13,23 @@ This is a Quai fork that reroutes the Solidity download to our link. Other than 
 ```
 2. Next, run `npm i` to install dependencies
 
-3. Finally, to remove your existing Solidity compiler so you can replace it with SolidityX, you need to run `npx hardhat clean --global`. Now run `npx hardhat compile` and SolidityX will be downloaded.
+3. To remove your existing Solidity compiler so you can replace it with SolidityX, you need to run `npx hardhat clean --global`
+  
+5. Finally, you can run `npx hardhat compile` and SolidityX will be downloaded
+
+## Changes
+
+These are the changes made compared to the standard hardhat npm package.
+
+1. Made changes to `internal/solidity/compiler/downloader.js` and `src/internal/solidity/compiler/downloader.ts`
+   
+     a. Comment out if statement that checks verification in `downloadCompiler(version)`
+   
+     b. Comment out if statement that checks `fs_extra_1.default.pathExists...` in `getCompiler(version)`
+   
+     c. Change url to point to your compiler in `_downloadCompiler(build)`
+
+3. Add local dependencies folder to store `es-lint-plugin-hardhat-internal-rules` and `eslint-plugin-slow-imports` since npm couldn't find them
 
 ## Documentation
 
