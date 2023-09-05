@@ -34,6 +34,7 @@ const os_1 = __importDefault(require("os"));
 const child_process_1 = require("child_process");
 const util_1 = require("util");
 const download_1 = require("../../util/download");
+const solidity_x_download_url = require("../../constants");
 const errors_1 = require("../../core/errors");
 const errors_list_1 = require("../../core/errors-list");
 const await_semaphore_1 = require("../../vendor/await-semaphore");
@@ -194,7 +195,7 @@ class CompilerDownloader {
     async _downloadCompiler(build) {
         log(`Downloading compiler ${build.longVersion}`);
         //const url = `${COMPILER_REPOSITORY_URL}/${this._platform}/${build.path}`;
-        const url = 'https://github.com/dominant-strategies/SolidityX/releases/download/0.0.1/solc';
+        const url = solidity_x_download_url;
         console.log(`Downloading Solidity X from ${url}`);
         const downloadPath = this._getCompilerDownloadPathFromBuild(build);
         await this._downloadFunction(url, downloadPath);

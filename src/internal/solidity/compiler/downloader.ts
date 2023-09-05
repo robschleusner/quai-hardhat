@@ -6,6 +6,7 @@ import { execFile } from "child_process";
 import { promisify } from "util";
 
 import { download } from "../../util/download";
+import { SOLIDITY_X_DOWNLOAD_URL } from "../../constants"
 import { assertHardhatInvariant, HardhatError } from "../../core/errors";
 import { ERRORS } from "../../core/errors-list";
 import { Mutex } from "../../vendor/await-semaphore";
@@ -283,7 +284,7 @@ export class CompilerDownloader implements ICompilerDownloader {
   private async _downloadCompiler(build: CompilerBuild): Promise<string> {
     log(`Downloading compiler ${build.longVersion}`);
     //const url = `${COMPILER_REPOSITORY_URL}/${this._platform}/${build.path}`;
-    const url = 'https://github.com/dominant-strategies/SolidityX/releases/download/0.0.1/solc';
+    const url = SOLIDITY_X_DOWNLOAD_URL;
     console.log(`Downloading Solidity X from ${url}`);
     const downloadPath = this._getCompilerDownloadPathFromBuild(build);
 

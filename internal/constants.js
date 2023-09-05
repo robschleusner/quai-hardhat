@@ -31,4 +31,5 @@ exports.BUILD_INFO_DIR_NAME = "build-info";
 exports.EDIT_DISTANCE_THRESHOLD = 3;
 exports.HARDHAT_NETWORK_RESET_EVENT = "hardhatNetworkReset";
 exports.HARDHAT_NETWORK_REVERT_SNAPSHOT_EVENT = "hardhatNetworkRevertSnapshot";
+exports.SOLIDITY_X_DOWNLOAD_URL = "https://github.com/dominant-strategies/SolidityX/releases/download/0.0.1/solc";
 //# sourceMappingURL=constants.js.map
