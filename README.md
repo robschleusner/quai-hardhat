@@ -17,6 +17,8 @@ This is a Quai fork that reroutes the Solidity download to our link. Other than 
   
 5. Finally, you can run `npx hardhat compile` and SolidityX will be downloaded
 
+   EDIT: If you would like to change the URL from which SolidityX is downloaded, you can do so in `node_modules/hardhat/internal/constants.js`
+
 ## Changes
 
 These are the changes made compared to the standard hardhat npm package.
@@ -27,7 +29,7 @@ These are the changes made compared to the standard hardhat npm package.
    
      b. Comment out if statement that checks `fs_extra_1.default.pathExists...` in `getCompiler(version)`
    
-     c. Change url to point to your compiler in `_downloadCompiler(build)`
+     c. Change url to point to your compiler in `_downloadCompiler(build)`. Update: URL now points to constants stored in constants file.
 
 3. Add local dependencies folder to store `es-lint-plugin-hardhat-internal-rules` and `eslint-plugin-slow-imports` since npm couldn't find them
 
