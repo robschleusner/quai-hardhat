@@ -13,7 +13,7 @@ export abstract class ProviderWrapperWithChainId extends ProviderWrapper {
       try {
         this._chainId = await this._getChainIdFromEthChainId();
       } catch {
-        // If eth_chainId fails we default to net_version
+        // If quai_chainId fails we default to net_version
         this._chainId = await this._getChainIdFromEthNetVersion();
       }
     }
@@ -23,7 +23,7 @@ export abstract class ProviderWrapperWithChainId extends ProviderWrapper {
 
   private async _getChainIdFromEthChainId(): Promise<number> {
     const id = (await this._wrappedProvider.request({
-      method: "eth_chainId",
+      method: "quai_chainId",
     })) as string;
 
     return rpcQuantityToNumber(id);

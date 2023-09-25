@@ -67,7 +67,7 @@ class EthModule {
                 return this._blockNumberAction(...this._blockNumberParams(params));
             case "eth_call":
                 return this._callAction(...this._callParams(params));
-            case "eth_chainId":
+            case "quai_chainId":
                 return this._chainIdAction(...this._chainIdParams(params));
             case "eth_coinbase":
                 return this._coinbaseAction(...this._coinbaseParams(params));
@@ -208,7 +208,7 @@ class EthModule {
         }
         return (0, base_types_1.bufferToRpcData)(returnData.value);
     }
-    // eth_chainId
+    // quai_chainId
     _chainIdParams(params) {
         return (0, validation_1.validateParams)(params);
     }

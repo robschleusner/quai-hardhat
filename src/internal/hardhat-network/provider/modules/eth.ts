@@ -121,7 +121,7 @@ export class EthModule {
       case "eth_call":
         return this._callAction(...this._callParams(params));
 
-      case "eth_chainId":
+      case "quai_chainId":
         return this._chainIdAction(...this._chainIdParams(params));
 
       case "eth_coinbase":
@@ -391,7 +391,7 @@ export class EthModule {
     return bufferToRpcData(returnData.value);
   }
 
-  // eth_chainId
+  // quai_chainId
 
   private _chainIdParams(params: any[]): [] {
     return validateParams(params);

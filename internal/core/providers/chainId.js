@@ -12,7 +12,7 @@ class ProviderWrapperWithChainId extends wrapper_1.ProviderWrapper {
                 this._chainId = await this._getChainIdFromEthChainId();
             }
             catch {
-                // If eth_chainId fails we default to net_version
+                // If quai_chainId fails we default to net_version
                 this._chainId = await this._getChainIdFromEthNetVersion();
             }
         }
@@ -20,7 +20,7 @@ class ProviderWrapperWithChainId extends wrapper_1.ProviderWrapper {
     }
     async _getChainIdFromEthChainId() {
         const id = (await this._wrappedProvider.request({
-            method: "eth_chainId",
+            method: "quai_chainId",
         }));
         return (0, base_types_1.rpcQuantityToNumber)(id);
     }
