@@ -51,8 +51,8 @@ export async function download(
     const responseBody = await response.body.arrayBuffer();
     const tmpFilePath = resolveTempFileName(filePath);
     await fsExtra.ensureDir(path.dirname(filePath));
-
-    await fsExtra.writeFile(tmpFilePath, responseBody);
+    const responseBodyBuffer = Buffer.from(responseBody);
+    await fsExtra.writeFile(tmpFilePath, responseBodyBuffer);
     return fsExtra.move(tmpFilePath, filePath, { overwrite: true });
   }
   // undici's response bodies must always be consumed to prevent leaks

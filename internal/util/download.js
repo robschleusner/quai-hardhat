@@ -65,7 +65,8 @@ async function download(url, filePath, timeoutMillis = 10000, extraHeaders = {})
         const responseBody = await response.body.arrayBuffer();
         const tmpFilePath = resolveTempFileName(filePath);
         await fs_extra_1.default.ensureDir(path_1.default.dirname(filePath));
-        await fs_extra_1.default.writeFile(tmpFilePath, responseBody);
+        const responseBodyBuffer = Buffer.from(responseBody);
+        await fs_extra_1.default.writeFile(tmpFilePath, responseBodyBuffer);
         return fs_extra_1.default.move(tmpFilePath, filePath, { overwrite: true });
     }
     // undici's response bodies must always be consumed to prevent leaks
